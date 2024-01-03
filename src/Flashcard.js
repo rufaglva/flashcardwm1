@@ -10,7 +10,7 @@ export default function Flashcard({ flashcard }) {
   function setMaxHeight() {
     const frontHeight = frontEl.current.getBoundingClientRect().height; // Fix typo here
     const backHeight = backEl.current.getBoundingClientRect().height;
-    setHeight(Math.max(frontHeight, backHeight, 100));
+    setHeight(Math.max(frontHeight, backHeight, 200));
   }
 
   useEffect(setMaxHeight, [flashcard.question, flashcard.answer, flashcard.options]);

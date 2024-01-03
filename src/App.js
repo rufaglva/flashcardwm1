@@ -2,6 +2,8 @@ import React, {useState, useEffect, useRef} from "react";
 import FlashcardList from "./FlashcardList";
 import './app.css'
 import axios from "axios";
+import FlashcardManager from "./FlashcardManager";
+
 
 function App() {
   const [flashcards, setFlashcards] = useState([])
@@ -75,8 +77,10 @@ function App() {
     <div className="container">
       <FlashcardList flashcards={flashcards} />
     </div>
+    <div className="App">
+      <FlashcardManager />
+    </div>
     </>
-
   );
 }
 
