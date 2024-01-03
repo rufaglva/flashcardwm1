@@ -1,0 +1,96 @@
+{
+    "messages": [
+      {
+        "subject": "Regarding your website",
+        "email": "user@example.com",
+        "content": "I have a question about your website.",
+        "id": 1
+      },
+      {
+        "subject": "Review Canceled",
+        "email": "fdfd@outlook",
+        "content": "e4rerer",
+        "id": 2
+      },
+      {
+        "subject": "qdwfwfeweefw",
+        "email": "rufaglva@outlook.com",
+        "content": "erfefewgrrw",
+        "id": 3
+      }
+    ],
+    "flashcards": [
+      {
+        "question": "What is a Promise in JavaScript?",
+        "answer": "A Promise is an object representing the eventual completion or failure of an asynchronous operation.",
+        "lastModified": "2024-01-03T16:47:31.951Z",
+        "status": "Want to Learn",
+        "id": 5,
+        "order": 7
+      },
+      {
+        "question": "How many minutes are in a full week?",
+        "answer": "10,080",
+        "lastModified": "2024-01-03T20:09:52.242Z",
+        "status": "Noted",
+        "id": 19,
+        "order": 3
+      },
+      {
+        "question": "Sleep and meditation are examples of:",
+        "answer": "Altered states of consciousness",
+        "lastModified": "2024-01-03T14:54:16.991Z",
+        "status": "Want to Learn",
+        "id": 20,
+        "order": 5
+      },
+      {
+        "question": "How many continents are there on Earth?",
+        "answer": "There are seven continents: Africa, Antarctica, Asia, Europe, North America, Australia, and South America.",
+        "lastModified": "2024-01-03T15:00:31.938Z",
+        "status": "Noted",
+        "id": 21,
+        "order": 6
+      },
+      {
+        "question": "What is the largest planet in our solar system?",
+        "answer": "Jupiter",
+        "lastModified": "2024-01-03T20:34:20.696Z",
+        "status": "Noted",
+        "id": 22,
+        "order": 8
+      },
+      {
+        "question": "In which year did the first manned moon landing take place?",
+        "answer": "The first manned moon landing took place on July 20, 1969.",
+        "lastModified": "2024-01-03T15:38:29.147Z",
+        "status": "Want to Learn",
+        "id": 23,
+        "order": 2
+      },
+      {
+        "question": "What is the chemical symbol for gold?",
+        "answer": "Au",
+        "lastModified": "2024-01-03T15:38:44.474Z",
+        "status": "Learned",
+        "id": 24,
+        "order": 1
+      },
+      {
+        "question": "Who painted the Mona Lisa?",
+        "answer": "Leonardo da Vinci.",
+        "lastModified": "2024-01-03T16:56:47.015Z",
+        "status": "Noted",
+        "id": 28,
+        "order": 9
+      },
+      {
+        "question": "What is the speed of light in a vacuum?",
+        "answer": "Approximately 299,792 kilometers per second.",
+        "lastModified": "2024-01-03T19:52:52.195Z",
+        "status": "Want to Learn",
+        "id": 29,
+        "order": 4
+      }
+    ]
+  }

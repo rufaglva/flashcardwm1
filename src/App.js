@@ -1,85 +1,60 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import FlashcardList from "./FlashcardList";
-import './app.css'
+import "./app.css";
 import axios from "axios";
 import FlashcardManager from "./FlashcardManager";
-
+import Messages from "./Messages";
+import Flashcards from "./Flashcards";
+import "./flashcardList.css";
 
 function App() {
-  const [flashcards, setFlashcards] = useState([])
-  const [categories, setCategories] = useState([])
-
-  const categoryEl =  useRef()
-  const amountEl = useRef()
-
-  useEffect(() => {
-    axios
-    .get('https://opentdb.com/api_category.php')
-    .then(res => {
-      setCategories(res.data.trivia_categories)
-    })
-  }, [])
+  const [flashcards, setFlashcards] = useState([]);
+  const [categories, setCategories] = useState([]); // Added initialization
+  const [data, setData] = useState({ messages: [], flashcards: [] });
+  const categoryEl = useRef();
+  const amountEl = useRef();
 
   useEffect(() => {
-  }, [])
+    axios.get('./flashcards.json')
+      .then((res) => {
+        setData(res.data);
+
+        // Assuming categories are available in the response
+        setCategories(res.data.categories || []);
+
+        setFlashcards(res.data.flashcards.map((flashcard, index) => ({
+          id: `${index}-${Date.now()}`,
+          question: flashcard.question,
+          answer: flashcard.answer,
+          options: flashcard.options ? flashcard.options.sort(() => Math.random() - 0.5) : [],
+          status: flashcard.status,
+        })));
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        // Handle error if needed
+      });
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission if needed
+  };
 
   function decodeString(str) {
-    const textArea = document.createElement(`textarea`)
-    textArea.innerHTML= str
-    return textArea.value
-  }
-
-  function handleSubmit (e) {
-    e.preventDefault()
-    axios
-    .get('https://opentdb.com/api.php', {
-      params: {
-        amount: amountEl.current.value,
-        category:categoryEl.current.value
-      }
-    })
-    .then(res => {
-      setFlashcards(res.data.results.map((questionItem, index) => {
-        const answer = decodeString(questionItem.correct_answer)
-        const options = [
-          ...questionItem.incorrect_answers.map(a => decodeString(a)),
-           answer]
-        return {
-          id: `${index}-${Date.now()}`,
-          question: decodeString(questionItem.question),
-          answer: questionItem.correct_answer,
-          options: options.sort(() => Math.random()- .5)
-        }
-      }))
-      console.log(res.data)
-    })
+    const textArea = document.createElement(`textarea`);
+    textArea.innerHTML = str;
+    return textArea.value;
   }
 
   return (
     <>
-    <form className="header" onSubmit = {handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="category">Category</label>
-        <select id="category" ref = {categoryEl}>
-        {categories.map(category => {
-          return <option value={category.id} key = {category.id}>{category.name}</option>
-        })}
-        </select>
+      <div className="container">
+        <FlashcardList flashcards={flashcards} />
       </div>
-      <div className="form-group">
-      <label htmlFor="amount">Number of Questions</label>
-      <input type = "number" id = "amount" min = "1" step = "1" defaultValue={10} ref = {amountEl}></input>
-        </div>
-        <div className="form-group">
-          <button className="btn">Generate</button>
-        </div>
-    </form>
-    <div className="container">
-      <FlashcardList flashcards={flashcards} />
-    </div>
-    <div className="App">
-      <FlashcardManager />
-    </div>
+      <div className="App">
+        <FlashcardManager />
+      </div>
     </>
   );
 }

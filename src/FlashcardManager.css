@@ -1,116 +1,31 @@
 /* FlashcardManager.css */
 
-body {
-    background-color: beige;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .container {
-    background-color: beige;
-    padding: 20px;
-    margin: 0;
-  }
-  
-  .flashcard-manager-container {
-    background-color: #d9ead3; /* Light green */
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  .flashcard-form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    margin-top: 10px;
-  }
-  
-  input,
-  select {
-    margin-top: 5px;
-    padding: 10px;
-    border: 1px solid #8e8e8e; /* Dark gray */
-    border-radius: 5px;
-  }
-  
-  .form-group {
-    margin-top: 0.5rem;
-  }
-  
-  button {
-    background-color: #4caf50; /* Green */
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background-color: #45a049; /* Darker green on hover */
-  }
-  
-  .flashcard-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .flashcard-item {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 10px;
-    position: relative;
-  }
-  
-  strong {
-    color: #4caf50; /* Green for strong tags */
-  }
-  
-  .button-group {
-    margin-top: 0.5rem;
-  }
-  
-  button.edit,
-  button.delete {
-    background-color: #2196f3; /* Blue for edit and delete buttons */
-    color: white;
-    padding: 5px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  button.delete {
-    background-color: #f44336; /* Red for delete button */
-  }
-  
-  .button-group {
-    margin-top: 0.5rem;
-    display: flex;
-  }
-  
-  .button-group button {
-    margin-right: 5px;
-  }
-  
-  button.edit {
-    background-color: #2196f3; /* Blue for edit button */
-  }
-  
-  button.delete {
-    background-color: #f44336; /* Red for delete button */
-  }
+.flashcard-manager-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.flashcard-form {
+  margin-bottom: 20px;
+}
+
+.flashcard-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.flashcard-list {
+  list-style: none;
+  padding: 0;
+}
+
+.flashcard-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.button-group button {
+  margin-right: 5px;
+}

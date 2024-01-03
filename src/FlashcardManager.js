@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./FlashcardManager.css"; //
+import "./FlashcardManager.css";
 
 const initialFlashcard = {
   id: null,
